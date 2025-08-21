@@ -569,7 +569,7 @@ body {
     }
     /* LEFT SECTION / CONTENT: FURTHER COMPACT FOR VERY SMALL PHONES, BUT READABLE */
     .left-section {
-        padding: clamp(5px, 1.9vw, 30px); /* Further reduce padding */
+        padding: clamp(10px, 2.5vw, 40px); /* Further reduce padding */
         object-fit: cover;
     }
     .left-content {
