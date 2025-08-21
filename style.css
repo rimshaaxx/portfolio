@@ -555,7 +555,7 @@ body {
     /* Cover section adjustments for very small phones */
     .cover-container {
         padding-top: 10px; /* Adjust padding-top for smaller header */
-        height: 250px; /* Adjusted height for very small mobile, balancing illustration/textbox */
+        height: 50px; /* Adjusted height for very small mobile, balancing illustration/textbox */
         aspect-ratio: unset;
         max-height: unset;
     }
@@ -591,7 +591,7 @@ body {
     }
     /* ILLUSTRATION POSITIONING FOR SMALL SCREENS */
     .illustration {
-        object-position: right; /* Shift illustration to the RIGHT within its container */
+        object-position: left; /* Shift illustration to the RIGHT within its container */
     }
     .section-divider {
         width: calc(100% - 90px);
