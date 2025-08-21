@@ -559,10 +559,10 @@ body {
     /* Cover section adjustments for very small phones */
     .cover-container {
         padding-top: 55px;
-        width: 100%;
+        width: 100vh;
         height: 300px; /* Adjusted height for very small mobile, balancing illustration/textbox */
-        aspect-ratio: unset;
-        max-height: unset;
+        aspect-ratio: 1920 / 900;
+        max-height:  calc(100vh - 55vh);
     }
     /* LEFT SECTION / CONTENT: FURTHER COMPACT FOR VERY SMALL PHONES, BUT READABLE */
     .left-section {
