@@ -559,7 +559,7 @@ body {
     /* Cover section adjustments for very small phones */
     .cover-container {
         padding-top: 15px;
-        width: 100vh;
+        width: 50vh;
         height: 300px; /* Adjusted height for very small mobile, balancing illustration/textbox */
         aspect-ratio: 1920 / 900;
         max-height:  calc(100vh - 75vh);
