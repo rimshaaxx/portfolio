@@ -560,7 +560,7 @@ body {
     /* Cover section adjustments for very small phones */
     .cover-container {
         padding-top: 15px;
-        width: 50vh;
+        width: 5vh;
         height: 300px; /* Adjusted height for very small mobile, balancing illustration/textbox */
         aspect-ratio: unset;
         max-height:  unset;
