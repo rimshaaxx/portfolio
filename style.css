@@ -558,16 +558,15 @@ body {
     }
     /* Cover section adjustments for very small phones */
     .cover-container {
-        padding-top: 45px;
+        padding-top: 15px;
         width: 100vh;
         height: 300px; /* Adjusted height for very small mobile, balancing illustration/textbox */
         aspect-ratio: 1920 / 900;
-        max-height:  calc(100vh - 55vh);
+        max-height:  calc(100vh - 75vh);
     }
     /* LEFT SECTION / CONTENT: FURTHER COMPACT FOR VERY SMALL PHONES, BUT READABLE */
     .left-section {
-        padding: clamp(5px, 4.5vw, 5px); /* Further reduce padding */
-       
+        padding: clamp(5px, 4.5vw, 5px); /* Further reduce padding */ 
     }
     .left-content {
         padding: clamp(20px, 2.5vw, 30px); /* Further reduce padding */
