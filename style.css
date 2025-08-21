@@ -563,13 +563,13 @@ body {
         padding-top: 70px; /* Adjust padding-top for smaller header */
         height: auto; /* Adjusted height for very small mobile, balancing illustration/textbox */
         aspect-ratio: 1920 / 900;
-        max-height: calc(100vh - 80vh);
+        max-height: calc(100vh - 70vh);
         align-items: stretch;
         object-fit: cover;
     }
     /* LEFT SECTION / CONTENT: FURTHER COMPACT FOR VERY SMALL PHONES, BUT READABLE */
     .left-section {
-        padding: clamp(10px, 2.5vw, 40px); /* Further reduce padding */
+        padding: clamp(20px, 3.5vw, 60px); /* Further reduce padding */
         object-fit: cover;
     }
     .left-content {
