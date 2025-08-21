@@ -598,7 +598,7 @@ body {
     /* ILLUSTRATION POSITIONING FOR SMALL SCREENS */
     .illustration {
         object-position: right; /* Shift illustration to the RIGHT within its container */
-        width: 100%;
+        width: 129%;
         height: 100%;
         object-fit: cover;
     }
