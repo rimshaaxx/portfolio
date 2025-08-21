@@ -554,8 +554,8 @@ body {
     }
     /* Cover section adjustments for very small phones */
     .cover-container {
-        padding-top: 90px; /* Adjust padding-top for smaller header */
-        height: 500px; /* Adjusted height for very small mobile, balancing illustration/textbox */
+        padding-top: 100px; /* Adjust padding-top for smaller header */
+        height: 250px; /* Adjusted height for very small mobile, balancing illustration/textbox */
         aspect-ratio: unset;
         max-height: unset;
     }
