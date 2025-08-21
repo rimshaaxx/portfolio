@@ -444,7 +444,7 @@ body {
 
 @media (max-width: 768px) {
     .main-header {
-        padding: 0 9px; /* Reduce padding on mobile to give more space for nav */
+        padding: 5px 9px; /* Reduce padding on mobile to give more space for nav */
     }
     .main-nav {
         max-width: none; /* Allow nav to take full width on mobile */
@@ -452,7 +452,7 @@ body {
     }
     .main-nav a {
         font-size: clamp(0.6em, 0.3vw, 0.9em); /* Aggressive font scaling for small screens */
-        margin: 0 40px; /* Reduce margin between links */
+        margin: 0px 40px; /* Reduce margin between links */
     }
     
     /* Cover section adjustments for tablets/half-screen (PRIMARY MOBILE FIX) */
@@ -558,10 +558,10 @@ body {
     }
     /* Cover section adjustments for very small phones */
     .cover-container {
-        
+        padding-top: 50px;
         width: 100%;
         padding-top: 70px; /* Adjust padding-top for smaller header */
-        height: auto; /* Adjusted height for very small mobile, balancing illustration/textbox */
+        height: 300px; /* Adjusted height for very small mobile, balancing illustration/textbox */
         aspect-ratio: 1920 / 900;
         max-height: calc(100vh - 70vh);
         align-items: stretch;
