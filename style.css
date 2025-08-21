@@ -565,11 +565,12 @@ body {
         aspect-ratio: 1920 / 900;
         max-height: calc(100vh - 70vh);
         align-items: stretch;
+        object-fit: cover;
     }
     /* LEFT SECTION / CONTENT: FURTHER COMPACT FOR VERY SMALL PHONES, BUT READABLE */
     .left-section {
         padding: clamp(5px, 1.9vw, 30px); /* Further reduce padding */
-        height: 100%;
+        object-fit: cover;
     }
     .left-content {
         padding: clamp(15px, 2.5vw, 25px); /* Further reduce padding */
