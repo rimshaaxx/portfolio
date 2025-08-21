@@ -558,7 +558,7 @@ body {
     }
     /* Cover section adjustments for very small phones */
     .cover-container {
-       
+        
         width: 100%;
         padding-top: 70px; /* Adjust padding-top for smaller header */
         height: auto; /* Adjusted height for very small mobile, balancing illustration/textbox */
@@ -569,11 +569,11 @@ body {
     }
     /* LEFT SECTION / CONTENT: FURTHER COMPACT FOR VERY SMALL PHONES, BUT READABLE */
     .left-section {
-        padding: clamp(20px, 3.5vw, 60px); /* Further reduce padding */
-        object-fit: cover;
+        padding: clamp(20px, 4.5vw, 60px); /* Further reduce padding */
+       
     }
     .left-content {
-        padding: clamp(15px, 2.5vw, 25px); /* Further reduce padding */
+        padding: clamp(25px, 3.5vw, 35px); /* Further reduce padding */
     }
     .left-content h1 {
         font-size: clamp(1.5rem, 5.8vw, 5.0em); /* Increased minimum for readability */
