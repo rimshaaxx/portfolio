@@ -540,43 +540,52 @@ body {
 
 @media (max-width: 480px) {
     .main-header {
-        height: 50px; /* Even smaller header for very small phones */
+        padding: 0 9px;
+        height: 70px; /* Even smaller header for very small phones */
+    }
+    .main-nav {
+        max-width: none; /* Allow nav to take full width on mobile */
+        justify-content: space-around; /* Distribute links more on mobile */
     }
     .main-nav a {
-        font-size: clamp(0.4em, 0.7vw, 0.6em); /* Even smaller nav text */
-        margin: 0 2px;
+        
+        font-size: clamp(0.7em, 0.9vw, 0.9em); /* Even smaller nav text */
+        margin: 0 4px;
     }
     /* Cover section adjustments for very small phones */
     .cover-container {
-        padding-top: 100px; /* Adjust padding-top for smaller header */
-        height: 280px; /* Adjusted height for very small mobile, balancing illustration/textbox */
+        padding-top: 60px; /* Adjust padding-top for smaller header */
+        height: 300px; /* Adjusted height for very small mobile, balancing illustration/textbox */
+        aspect-ratio: unset;
+        max-height: unset;
     }
     /* LEFT SECTION / CONTENT: FURTHER COMPACT FOR VERY SMALL PHONES, BUT READABLE */
     .left-section {
-        padding: clamp(5px, 1.5vw, 10px); /* Further reduce padding */
+        padding: clamp(5px, 1.5vw, 15px); /* Further reduce padding */
     }
     .left-content {
-        padding: clamp(8px, 2vw, 15px); /* Further reduce padding */
+        padding: clamp(19px, 3vw, 35px); /* Further reduce padding */
     }
     .left-content h1 {
-        font-size: clamp(1.0rem, 2.8vw, 1.5rem); /* Increased minimum for readability */
-        line-height: 1;
+        font-size: clamp(1.5rem, 5.8vw, 5.0em); /* Increased minimum for readability */
+        line-height: 0.9;
     }
     .left-content h2 {
-        font-size: clamp(0.6rem, 1.2vw, 0.9rem); /* Increased minimum for readability */
+        font-size: clamp(0.8rem, 3.2vw, 0.9rem); /* Increased minimum for readability */
         margin-top: clamp(2px, 0.8vw, 5px);
         line-height: 1.1;
     }
     .bottom-content {
         justify-content: space-between; /* Keep space-between */
         align-items: flex-end; /* Keep align-items flex-end */
-        margin-top: clamp(3px, 0.8vw, 8px); /* Adjusted margin-top for bottom content */
+        margin-top: clamp(5px, 0.8vw, 8px); /* Adjusted margin-top for bottom content */
     }
     .portfolio-text {
-        font-size: clamp(0.3rem, 0.4vw, 0.45rem);
+        font-size: clamp(0.5rem, 0.7vw, 4.65em);
+        letter-spacing: clamp(0.2px, 0.35px, 1.0px);
     }
     .scroll-arrow {
-        font-size: 1.1em;
+        font-size: clamp(1.0em, 2vw, 7em)
         /* KEY CHANGE: Adjust position for arrow not to touch border */
         margin-bottom: clamp(0px, 0.5vw, 5px); /* Add a small margin-bottom to lift it from the border */
     }
@@ -584,15 +593,24 @@ body {
     .illustration {
         object-position: right; /* Shift illustration to the RIGHT within its container */
     }
-
+    .section-divider {
+        width: calc(100% - 20px);
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
     /* Expertise Section adjustments for very small phones */
     .expertise-content {
-        padding: 15px;
+        padding: 17px;
     }
     .expertise-grid {
-        grid-template-columns: 1fr; /* Force 1 column on very small phones for readability */
-        gap: 15px;
+        grid-template-columns: repeat(2, 1fr); /* Force 1 column on very small phones for readability */
+        gap: 10px;
         padding: 0 5px; /* Very minimal padding */
+    }
+    .expertise-intro-text {
+        font-size: clamp(0.5em, 1em, 1em);
+        margin-bottom: clamp(10px, 2vw, 20px);
+        padding: 0 clamp(6px, 1vw, 13px);
     }
     .expertise-card {
         padding: clamp(15px, 2vw, 25px); /* Aggressive clamp */
