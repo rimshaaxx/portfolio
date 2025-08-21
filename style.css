@@ -562,8 +562,8 @@ body {
         padding-top: 15px;
         width: 50vh;
         height: 300px; /* Adjusted height for very small mobile, balancing illustration/textbox */
-        aspect-ratio: 1920 / 900;
-        max-height:  calc(100vh - 100vh);
+        aspect-ratio: unset;
+        max-height:  unset;
     }
     /* LEFT SECTION / CONTENT: FURTHER COMPACT FOR VERY SMALL PHONES, BUT READABLE */
     .left-section {
