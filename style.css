@@ -544,7 +544,7 @@ body {
         top: 0;
         left: 0;
         width: 100%;
-        padding: 0 35px;
+        padding: 5px 9px;
         height: 50px; /* Even smaller header for very small phones */
     }
     .main-nav {
@@ -554,20 +554,20 @@ body {
     }
     .main-nav a {
         
-        font-size: clamp(0.6em, 0.9vw, 0.9em); /* Even smaller nav text */
-        margin: 0 3.5px;
+        font-size: clamp(0.6em, 2.9vw, 0.9em); /* Even smaller nav text */
+        margin: 0px 25px;
     }
     /* Cover section adjustments for very small phones */
     .cover-container {
-        padding-top: 15px;
-        width: 5vh;
-        height: 300px; /* Adjusted height for very small mobile, balancing illustration/textbox */
+        padding-top: 50px;
+        width: auto;
+        height: 260px; /* Adjusted height for very small mobile, balancing illustration/textbox */
         aspect-ratio: unset;
         max-height:  unset;
     }
     /* LEFT SECTION / CONTENT: FURTHER COMPACT FOR VERY SMALL PHONES, BUT READABLE */
     .left-section {
-        padding: clamp(5px, 4.5vw, 5px); /* Further reduce padding */ 
+        padding: clamp(10px, 5.9vw, 9.9px); /* Further reduce padding */ 
     }
     .left-content {
         padding: clamp(20px, 2.5vw, 30px); /* Further reduce padding */
