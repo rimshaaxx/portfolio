@@ -464,7 +464,7 @@ body {
     }
     /* LEFT SECTION / CONTENT: MAKE TEXTBOX SHORTER AND COMPACT, BUT READABLE */
     .left-section {
-        padding: clamp(5px, 1.5vw, 15px); /* Aggressive smaller padding for outline */
+        padding: clamp(11px, 24.5vw, 15px); /* Aggressive smaller padding for outline */
     }
     .left-content {
         padding: clamp(25px, 5vw, 50px); /* Aggressive smaller padding inside box */
@@ -558,7 +558,7 @@ body {
     }
     /* Cover section adjustments for very small phones */
     .cover-container {
-        padding-top: 50px;
+        padding-top: 30px;
         width: 100%;
         padding-top: 70px; /* Adjust padding-top for smaller header */
         height: 300px; /* Adjusted height for very small mobile, balancing illustration/textbox */
@@ -569,11 +569,11 @@ body {
     }
     /* LEFT SECTION / CONTENT: FURTHER COMPACT FOR VERY SMALL PHONES, BUT READABLE */
     .left-section {
-        padding: clamp(20px, 4.5vw, 60px); /* Further reduce padding */
+        padding: clamp(10px, 4.5vw, 10px); /* Further reduce padding */
        
     }
     .left-content {
-        padding: clamp(25px, 3.5vw, 35px); /* Further reduce padding */
+        padding: clamp(20px, 2.5vw, 30px); /* Further reduce padding */
     }
     .left-content h1 {
         font-size: clamp(1.5rem, 5.8vw, 5.0em); /* Increased minimum for readability */
