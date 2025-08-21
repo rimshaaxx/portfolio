@@ -548,6 +548,7 @@ body {
         height: 50px; /* Even smaller header for very small phones */
     }
     .main-nav {
+        position: fixed;
         max-width: none; /* Allow nav to take full width on mobile */
         justify-content: space-around; /* Distribute links more on mobile */
     }
@@ -562,7 +563,7 @@ body {
         width: 50vh;
         height: 300px; /* Adjusted height for very small mobile, balancing illustration/textbox */
         aspect-ratio: 1920 / 900;
-        max-height:  calc(100vh - 75vh);
+        max-height:  calc(100vh - 100vh);
     }
     /* LEFT SECTION / CONTENT: FURTHER COMPACT FOR VERY SMALL PHONES, BUT READABLE */
     .left-section {
