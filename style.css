@@ -511,7 +511,7 @@ body {
     .expertise-grid {
         grid-template-columns: repeat(2, 1fr); /* STAY 2 COLUMNS ON TABLETS/HALF-SCREEN */
         gap: 10px; /* Even smaller gap for more compaction */
-        padding: 0 5px; /* Even less padding for more compaction */
+        padding: 0 5px; 
     }
     .expertise-intro-text {
         font-size: clamp(0.8em, 1.2vw, 1em); /* More aggressive text scaling */
