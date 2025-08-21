@@ -558,7 +558,7 @@ body {
     }
     /* Cover section adjustments for very small phones */
     .cover-container {
-        padding-top: 55px;
+        padding-top: 45px;
         width: 100vh;
         height: 300px; /* Adjusted height for very small mobile, balancing illustration/textbox */
         aspect-ratio: 1920 / 900;
@@ -566,7 +566,7 @@ body {
     }
     /* LEFT SECTION / CONTENT: FURTHER COMPACT FOR VERY SMALL PHONES, BUT READABLE */
     .left-section {
-        padding: clamp(9px, 4.5vw, 9.5px); /* Further reduce padding */
+        padding: clamp(5px, 4.5vw, 5px); /* Further reduce padding */
        
     }
     .left-content {
