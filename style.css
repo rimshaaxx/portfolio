@@ -560,10 +560,10 @@ body {
     .cover-container {
        
         width: 100%;
-        padding-top: 60px; /* Adjust padding-top for smaller header */
+        padding-top: 70px; /* Adjust padding-top for smaller header */
         height: auto; /* Adjusted height for very small mobile, balancing illustration/textbox */
         aspect-ratio: 1920 / 900;
-        max-height: calc(100vh - 70vh);
+        max-height: calc(100vh - 60vh);
         align-items: stretch;
         object-fit: cover;
     }
