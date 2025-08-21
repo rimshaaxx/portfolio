@@ -499,7 +499,7 @@ body {
 
     /* ABOUT ME & EXPERTISE SECTION SPACING */
     .section-divider {
-        width: calc(100% - 40px); /* Adjust divider width for smaller screens */
+        width: calc(100% - 10px); /* Adjust divider width for smaller screens */
         margin-top: 15px; /* Even smaller margin for mobile */
         margin-bottom: 15px; /* Even smaller margin for mobile */
     }
@@ -554,14 +554,14 @@ body {
     }
     /* Cover section adjustments for very small phones */
     .cover-container {
-        padding-top: 10px; /* Adjust padding-top for smaller header */
-        height: 400px; /* Adjusted height for very small mobile, balancing illustration/textbox */
+        padding-top: 90px; /* Adjust padding-top for smaller header */
+        height: 500px; /* Adjusted height for very small mobile, balancing illustration/textbox */
         aspect-ratio: unset;
         max-height: unset;
     }
     /* LEFT SECTION / CONTENT: FURTHER COMPACT FOR VERY SMALL PHONES, BUT READABLE */
     .left-section {
-        padding: clamp(3px, 0.5vw, 10px); /* Further reduce padding */
+        padding: clamp(4px, 0.9vw, 13px); /* Further reduce padding */
     }
     .left-content {
         padding: clamp(15px, 2.5vw, 25px); /* Further reduce padding */
