@@ -1,0 +1,632 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Crucial for consistent sizing */
+}
+
+/* Ensure html and body take full initial height and have no default margins/padding */
+html, body {
+    width: 100%;
+    min-height: 100%; 
+}
+
+body {
+    height: auto; /* Allows vertical scrolling for content below */
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+    overflow-y: scroll; /* Allow vertical scrolling */
+    font-family: 'Open Sans', sans-serif; /* Default body font */
+    background-color: #000; /* Ensure body background is black */
+    color: #fff; /* Default text color for the whole page */
+    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+}
+
+/* --- MAIN NAVIGATION HEADER --- */
+.main-header {
+    position: fixed; /* Stays at the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px; /* Fixed height for the header */
+    background-color: #000; /* Black background */
+    display: flex;
+    justify-content: center; /* Center the nav items */
+    align-items: center;
+    padding: 0 40px; /* Horizontal padding from edges */
+    z-index: 1000; /* Ensure it's on top of other content */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle bottom line */
+}
+
+.main-nav {
+    display: flex; /* Always a flex row */
+    flex-grow: 1; /* Allows nav to take up available space */
+    justify-content: space-evenly; /* Distributes links equally */
+    max-width: 900px; /* Limits spread on very wide screens, adjust as needed */
+    height: 100%; /* Ensures vertical centering via align-items on parent */
+    align-items: center; /* For links within nav */
+}
+
+.main-nav a {
+    font-family: 'Open Sans', sans-serif; /* Matched to general nav font */
+    font-size: clamp(0.7em, 1.2vw, 0.9em); /* Scales font size responsibly */
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin: 0; /* No explicit margin-left as space-evenly handles spacing */
+    transition: color 0.3s ease; /* Smooth hover effect */
+    white-space: nowrap; /* Prevent nav links from wrapping on smaller screens */
+    position: relative; /* For the underline animation */
+}
+
+.main-nav a:hover {
+    color: #aaa; /* Slightly grey on hover */
+}
+
+/* Interactive Navigation Hover (from Canva AI idea) */
+.main-nav a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #e75480; /* Accent color for underline */
+    transition: width 0.3s ease;
+    position: absolute;
+    left: 0; 
+    bottom: -4px; /* Position below the text */
+}
+
+.main-nav a:hover::after {
+    width: 100%; /* Expands to full width on hover */
+}
+
+
+/* --- COVER CONTAINER (The entire RIMSHA | Illustration section) --- */
+/* This container defines the visual space for the text box and illustration */
+.cover-container {
+    display: flex;
+    flex-direction: row; /* Always side-by-side */
+    flex-wrap: nowrap; /* Prevents stacking onto new lines */
+
+    width: 100vw; /* Take full viewport width */
+    padding-top: 60px; /* PUSHES CONTENT DOWN BY EXACT HEADER HEIGHT for fixed nav */
+    
+    background-color: #000; /* Ensure background is black */
+    position: relative; /* For illustration positioning inside */
+    
+    /* DESKTOP IS PERFECT - DO NOT CHANGE THESE VALUES */
+    /* Height will be determined by its aspect ratio, fitting into the wrapper */
+    aspect-ratio: 1920 / 900; /* Aspect ratio from your desktop image. */
+    max-height: calc(100vh - 60px); /* Limits height to fit within viewport below header */
+    height: auto; /* Let aspect-ratio determine height based on width */
+    
+    /* Ensure children (left & right sections) are stretched to equal height */
+    align-items: stretch; /* Default for flex containers, ensures equal height of children */
+    
+}
+
+.left-section {
+    flex: 1; /* Takes equal horizontal space with right-section */
+    min-width: 0; /* Allows text section to shrink without overflowing its content */
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Vertically center content */
+    /* DESKTOP PADDING - DO NOT CHANGE */
+    padding: clamp(10px, 2.5vw, 60px); /* Adjust padding for outline size */
+    height: 100%; /* Crucial: make sure it fills the height of cover-container */
+}
+
+.left-content {
+    width: 100%;
+    height: 100%; /* Fill the height of left-section */
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Border matches image */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    /* DESKTOP PADDING - DO NOT CHANGE */
+    padding: clamp(15px, 3.125vw, 80px); /* Adjust padding for outline size */
+    justify-content: space-between;
+    min-width: 0; /* Allows content within flex item to shrink */
+}
+
+/* Text Styling - DESKTOP FONT SIZES - DO NOT CHANGE */
+.left-content h1 {
+    font-family: 'DM serif display', sans-serif; /* Matched to image */
+    font-size: clamp(1.8rem, 5vw, 5em); /* Scales aggressively */
+    margin: 0;
+    font-weight: normal;
+    line-height: 1;
+    color: #f0f0f0; /* Slightly off-white */
+}
+
+.left-content h2 {
+    font-family: 'Open Sans', sans-serif; /* Matched to image */
+    font-size: clamp(1rem, 2.5vw, 2.5em); /* Scales aggressively */
+    margin-top: clamp(3px, 1.25vw, 20px); /* Scales margin-top aggressively */
+    font-weight: 400;
+    line-height: 1.2;
+    color: #f0f0f0;
+}
+
+.bottom-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: clamp(8px, 2.5vw, 40px); /* Scales margin-top aggressively */
+}
+
+.portfolio-text {
+    font-family: 'Open Sans, sans-serif'; /* Matched to image */
+    font-size: clamp(0.5rem, 0.9vw, 0.9em); /* Scales text aggressively */
+    color: #f0f0f0;
+    text-transform: uppercase;
+    letter-spacing: clamp(0.2px, 0.0625vw, 1px); /* Scales letter-spacing aggressively */
+}
+
+.scroll-arrow {
+    font-size: 2.5rem; /* Large size, matches Canva's demo */
+    color: #e75480; /* Accent color, matches Canva's demo */
+    cursor: pointer;
+    line-height: 1;
+    position: relative; /* For bounce animation */
+    animation: bounce 1.5s infinite; /* Added bounce animation */
+}
+
+.scroll-arrow:hover {
+    color: #fff; /* Changes color on hover, matches Canva's demo */
+}
+
+/* Keyframe animation for bounce effect (from Canva AI idea) */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(10px); }
+}
+
+
+.right-section {
+    flex: 1; /* Takes equal horizontal space with left-section */
+    min-width: 0; /* Allows illustration section to shrink */
+    background-color: #000;
+    position: relative;
+    overflow: hidden; /* Ensures illustration stays within bounds */
+    display: flex; /* Use flex to center illustration */
+    justify-content: center;
+    align-items: center; /* Center vertically to allow proper scaling of illustration */
+    height: 100%; /* Crucial: make sure it fills the height of cover-container */
+}
+
+.illustration {
+    width: 100%; /* Fill width of its parent (.right-section) */
+    height: 100%; /* Fill height of its parent (.right-section) */
+    object-fit: cover; /* Changed to cover to fill height and potentially crop */
+    display: block; /* Remove any inline-block spacing issues */
+    z-index: 1;
+    /* object-position will be set in media queries for mobile */
+}
+
+/* --- SCROLL TARGET --- */
+#scroll-target-content {
+    height: 1px; /* Very small height to act as a target */
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: block;
+    background-color: transparent; /* Ensure it's not visible */
+}
+
+/* --- SECTION DIVIDER (Used across multiple sections) --- */
+.section-divider {
+    width: calc(100% - 80px); /* Matches image's thinner divider */
+    height: 1px; /* Thinner line */
+    background-color: #666; /* Match image's slightly lighter grey line */
+    margin: 0 auto; /* Center the divider */
+    margin-top: 20px; /* Minimal space *above* the divider */
+    margin-bottom: 20px; /* Minimal space *below* the divider */
+}
+
+/* --- COMMON SECTION HEADING STYLE (Used for ABOUT ME and MY EXPERTISE) --- */
+.section-title {
+    font-family: 'Open Sans, sans-serif'; /* Matched to image */
+    font-size: 2.5em; /* Match image size */
+    margin-bottom: 15px; /* Space below heading */
+    position: relative;
+    display: inline-block;
+    color: #f0f0f0;
+    text-align: center; /* Ensures the underline is centered */
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px; /* Thicker underline to match image */
+    background-color: #f0f0f0; /* Match text color */
+    position: absolute;
+    bottom: -8px; /* Adjust position of underline */
+    left: 50%;
+    transform: translateX(-50%); /* Center the underline */
+}
+
+
+/* --- ABOUT ME SECTION --- */
+.about-me-section {
+    background-color: black
+    color: #fff;
+    padding-top: 20px; /* Minimal space above content within the section */
+    padding-bottom: 0; /* No extra padding here as divider has margin */
+    text-align: center; /* Center the overall content */
+    
+    background-image: url(bkgdesign.png);
+    background-size: cover;
+    
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    position: relative;
+    z-index: 1;
+}
+
+.about-me-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* Adjust opacity (e.g., 0.5 to 0.8) for text readability */
+    z-index: -1; /* Place behind content but above background image */
+}
+
+.about-me-content {
+    max-width: 800px; /* Limit content width as in image */
+    margin: 0 auto; /* Center the content */
+    padding: 40px; /* Padding around the text block as in image */
+    color: #f0f0f0; /* Slightly off-white */
+}
+
+.about-me-content p {
+    font-family: 'Open Sans, sans-serif'; /* Matched to image */
+    font-size: 1em; /* Standard paragraph size */
+    line-height: 1.6;
+    margin-bottom: 20px; /* Space after paragraphs */
+    color: #f0f0f0;
+}
+
+.about-me-content ul {
+    list-style: disc; /* Bullet points */
+    text-align: left; /* Align list items left within their container */
+    padding-left: 20px; /* Indent for bullets */
+    margin-bottom: 30px; /* Increased space after bullets as in image */
+    display: inline-block; /* Allows ul to be centered while content is left-aligned */
+}
+
+.about-me-content ul li {
+    font-family: 'Open Sans, sans-serif' ; /* Matched to image */
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 10px; /* Space between list items */
+    color: #f0f0f0;
+}
+
+/* --- MY EXPERTISE SECTION --- */
+.expertise-section {
+    background-color: #000;
+    color: #fff;
+    padding-top: 20px; /* Minimal space above content within the section */
+    padding-bottom: 0; /* No extra padding here as divider has margin */
+    text-align: center; /* Center overall content */
+    
+    background-image: url(bkgdesign.png); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+
+
+
+.expertise-content {
+    max-width: 1200px; /* Max width for the expertise content area */
+    margin: 0 auto; /* Center the content */
+    padding: 40px; /* Padding around the grid */
+}
+
+.expertise-intro-text {
+    font-family: 'Raleway', sans-serif; /* Matched to image */
+    font-size: 1.1em;
+    color: #E0E0E0; /* Light grey for intro text */
+    margin-top: 25px; /* Space below heading */
+    margin-bottom: 50px; /* Space above grid */
+    line-height: 1.6;
+    max-width: 800px; /* Limit intro text width for readability */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on desktop */
+    gap: 30px; /* Space between cards */
+    padding: 0 20px; /* Padding around the grid to not touch edges */
+}
+
+.expertise-card {
+    background: linear-gradient(145deg, #381f1f, #291a22);
+    border: 1px solid #FFFFFF; /* Pure white border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 40px 25px; /* Internal padding */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    text-align: center; /* Center text */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+    cursor: pointer;
+}
+
+.expertise-card:hover {
+    transform: translateY(-5px); /* Lift card slightly */
+     box-shadow: 0 8px 25px rgba(107, 109, 2, 0.596), /* A subtle pink/purple glow */
+                0 0 0 1px rgba(88, 30, 30, 0.37); /* A very thin, subtle white outer glow */
+    border-color: rgba(201, 107, 19, 0.938); /* Make border slightly brighter on hover */
+}
+
+.card-icon {
+    font-family: 'Bebas Neue', sans-serif; /* Matched to image */
+    font-size: 3em; /* Large size for the number icon */
+    color: #FFFFFF; /* Pure white number */
+    margin-bottom: 20px;
+    line-height: 1; /* Keep line height tight */
+}
+
+.expertise-card h3 {
+    font-family: 'open-sans', sans-serif; /* Matched to image */
+    font-size: 1.8em; /* Service title size */
+    color: #FFFFFF; /* Pure white title */
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.expertise-card p {
+    font-family: 'Raleway', sans-serif; /* Matched to image */
+    font-size: 0.95em;
+    color: #E0E0E0; /* Light grey for description */
+    line-height: 1.6;
+    margin-bottom: 25px; /* Space above the arrow */
+    flex-grow: 1; /* Allows descriptions of different lengths to push arrow down */
+}
+
+.card-arrow {
+    font-family: 'Open Sans', sans-serif; /* Matched to image */
+    font-size: 1.5em; /* Size of the arrow */
+    color: #FFFFFF; /* Pure white arrow */
+    font-weight: bold;
+    opacity: 1; /* Slightly dimmed to indicate more content */
+    transition: opacity 0.3s ease;
+}
+
+.expertise-card:hover .card-arrow {
+    opacity: 0.8; /* Arrow brightens on hover */
+}
+
+
+/* --- PLACEHOLDER SECTIONS (for future content, matching nav links) --- */
+.placeholder-section {
+    background-color: #000;
+    color: #fff;
+    padding: 100px 40px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Subtle top border for separation */
+}
+.placeholder-heading {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3em;
+    color: #f0f0f0;
+    margin-bottom: 20px;
+}
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+
+@media (max-width: 1024px) {
+    /* Adjust main padding for slightly smaller desktops */
+    .main-header { padding: 0 20px; }
+    .main-nav a { font-size: 0.8em; }
+    /* Cover container will scale down due to aspect-ratio */
+    .left-section { padding: clamp(10px, 2vw, 40px); }
+    .left-content { padding: clamp(15px, 2.5vw, 60px); } /* Scale padding down */
+    .left-content h1 { font-size: clamp(1.5rem, 4.5vw, 4em); }
+    .left-content h2 { font-size: clamp(0.8rem, 2vw, 2em); }
+    .bottom-content { margin-top: clamp(8px, 2vw, 30px); }
+    .portfolio-text { font-size: clamp(0.4rem, 0.8vw, 0.8em); }
+    .scroll-arrow { font-size: 2em; }
+}
+
+
+@media (max-width: 768px) {
+    .main-header {
+        padding: 0 9px; /* Reduce padding on mobile to give more space for nav */
+    }
+    .main-nav {
+        max-width: none; /* Allow nav to take full width on mobile */
+        justify-content: space-around; /* Distribute links more on mobile */
+    }
+    .main-nav a {
+        font-size: clamp(0.6em, 0.3vw, 0.9em); /* Aggressive font scaling for small screens */
+        margin: 0 40px; /* Reduce margin between links */
+    }
+    
+    /* Cover section adjustments for tablets/half-screen (PRIMARY MOBILE FIX) */
+    .cover-container {
+        padding-top: 55px; 
+        height: 320px; 
+        aspect-ratio: unset; 
+        max-height: unset; 
+    }
+    /* LEFT SECTION / CONTENT: MAKE TEXTBOX SHORTER AND COMPACT, BUT READABLE */
+    .left-section {
+        padding: clamp(5px, 1.5vw, 15px); /* Aggressive smaller padding for outline */
+    }
+    .left-content {
+        padding: clamp(25px, 5vw, 50px); /* Aggressive smaller padding inside box */
+    }
+    .left-content h1 {
+        font-size: clamp(2.0rem, 7.5vw, 9.0em); /* Increased minimum font size for readability */
+        line-height: 0.9; /* Ensure tight line-height */
+    }
+    .left-content h2 {
+        font-size: clamp(1.0rem, 4.8vw, 1.2em); /* Increased minimum font size for readability */
+        margin-top: clamp(2px, 0.8vw, 5px); /* More compact margin */
+        line-height: 1.1; /* Ensure tight line-height */
+    }
+    .bottom-content {
+        justify-content: space-between; /* Keep space-between */
+        align-items: flex-end; /* Keep align-items flex-end */
+        margin-top: clamp(9px, 0.8vw, 8px); /* Adjusted margin-top for bottom content */
+    }
+    .portfolio-text {
+        font-size: clamp(0.6rem, 0.9vw, 6.65em); /* Increased minimum font size for readability */
+        letter-spacing: clamp(0.5px, 0.55vw, 1.5px);
+    }
+    .scroll-arrow {
+        font-size: clamp(2.0em, 4vw, 9em);
+        /* KEY CHANGE: Adjust position for arrow not to touch border */
+        margin-bottom: clamp(0px, 0.5vw, 5px); /* Add a small margin-bottom to lift it from the border */
+    }
+    /* ILLUSTRATION POSITIONING FOR SMALL SCREENS */
+    .illustration {
+        object-position: right; /* Shift illustration to the RIGHT within its container */
+    }
+
+    /* ABOUT ME & EXPERTISE SECTION SPACING */
+    .section-divider {
+        width: calc(100% - 40px); /* Adjust divider width for smaller screens */
+        margin-top: 15px; /* Even smaller margin for mobile */
+        margin-bottom: 15px; /* Even smaller margin for mobile */
+    }
+
+    /* Expertise Section adjustments for tablets/half-screen (STILL 2 COLUMNS, MORE COMPACT) */
+    .expertise-content {
+        padding: 20px;
+    }
+    .expertise-grid {
+        grid-template-columns: repeat(2, 1fr); /* STAY 2 COLUMNS ON TABLETS/HALF-SCREEN */
+        gap: 10px; /* Even smaller gap for more compaction */
+        padding: 0 5px; /* Even less padding for more compaction */
+    }
+    .expertise-intro-text {
+        font-size: clamp(0.8em, 1.2vw, 1em); /* More aggressive text scaling */
+        margin-bottom: clamp(15px, 3vw, 30px);
+        padding: 0 clamp(10px, 2vw, 15px);
+    }
+    .expertise-card {
+        padding: clamp(15px, 3vw, 30px); /* More aggressive clamp for padding */
+    }
+    .card-icon {
+        font-size: clamp(1.8em, 4vw, 2.5em); /* More aggressive clamp for icon size */
+        margin-bottom: clamp(8px, 2vw, 15px);
+    }
+    .expertise-card h3 {
+        font-size: clamp(1em, 2.5vw, 1.5em); /* More aggressive clamp for title size */
+        margin-bottom: clamp(6px, 1.5vw, 10px);
+    }
+    .expertise-card p {
+        font-size: clamp(0.75em, 1.5vw, 0.9em); /* More aggressive clamp for description text */
+        margin-bottom: clamp(12px, 2.5vw, 20px);
+    }
+    .card-arrow {
+        font-size: clamp(0.9em, 2vw, 1.2em); /* More aggressive clamp for arrow size */
+    }
+}
+
+@media (max-width: 480px) {
+    .main-header {
+        height: 50px; /* Even smaller header for very small phones */
+    }
+    .main-nav a {
+        font-size: clamp(0.4em, 0.7vw, 0.6em); /* Even smaller nav text */
+        margin: 0 2px;
+    }
+    /* Cover section adjustments for very small phones */
+    .cover-container {
+        padding-top: 100px; /* Adjust padding-top for smaller header */
+        height: 280px; /* Adjusted height for very small mobile, balancing illustration/textbox */
+    }
+    /* LEFT SECTION / CONTENT: FURTHER COMPACT FOR VERY SMALL PHONES, BUT READABLE */
+    .left-section {
+        padding: clamp(5px, 1.5vw, 10px); /* Further reduce padding */
+    }
+    .left-content {
+        padding: clamp(8px, 2vw, 15px); /* Further reduce padding */
+    }
+    .left-content h1 {
+        font-size: clamp(1.0rem, 2.8vw, 1.5rem); /* Increased minimum for readability */
+        line-height: 1;
+    }
+    .left-content h2 {
+        font-size: clamp(0.6rem, 1.2vw, 0.9rem); /* Increased minimum for readability */
+        margin-top: clamp(2px, 0.8vw, 5px);
+        line-height: 1.1;
+    }
+    .bottom-content {
+        justify-content: space-between; /* Keep space-between */
+        align-items: flex-end; /* Keep align-items flex-end */
+        margin-top: clamp(3px, 0.8vw, 8px); /* Adjusted margin-top for bottom content */
+    }
+    .portfolio-text {
+        font-size: clamp(0.3rem, 0.4vw, 0.45rem);
+    }
+    .scroll-arrow {
+        font-size: 1.1em;
+        /* KEY CHANGE: Adjust position for arrow not to touch border */
+        margin-bottom: clamp(0px, 0.5vw, 5px); /* Add a small margin-bottom to lift it from the border */
+    }
+    /* ILLUSTRATION POSITIONING FOR SMALL SCREENS */
+    .illustration {
+        object-position: right; /* Shift illustration to the RIGHT within its container */
+    }
+
+    /* Expertise Section adjustments for very small phones */
+    .expertise-content {
+        padding: 15px;
+    }
+    .expertise-grid {
+        grid-template-columns: 1fr; /* Force 1 column on very small phones for readability */
+        gap: 15px;
+        padding: 0 5px; /* Very minimal padding */
+    }
+    .expertise-card {
+        padding: clamp(15px, 2vw, 25px); /* Aggressive clamp */
+    }
+}
+
+/* Accessibility: Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+    .scroll-arrow, .main-nav a, .expertise-card {
+        transition: none !important;
+    }
+    .scroll-arrow {
+        animation: none !important; /* Disable bounce animation */
+    }
+}
+/* --- MY WORK SECTION (New Design) --- */
+.work-section {
+    background-color: #000; /* Fallback black background */
+    color: #fff;
+    padding-top: 20px; /* Minimal space above content */
+    padding-bottom: 0; /* No extra padding here as divider has margin */
+    text-align: center; /* Center overall content */
+    overflow: hidden; /* Crucial for background shapes */
+    position: relative; /* For background shapes positioning */
+
+    /* Background image for the entire section (the wavy lines) */
+    /* IMPORTANT: REPLACE 'images/work-section-bg-new.png' with your actual image path and filename */
+    background-image: url('my\ work\ background.png'); 
+    background-size: cover; /* Cover the entire section */
+    background-position: center center; /* Center the image */
+    background-repeat: no-repeat; /* No tiling */
+    background-attachment: scroll; /* Scrolls with content */
+}
+
+
+
+
