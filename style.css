@@ -563,7 +563,7 @@ body {
         padding-top: 70px; /* Adjust padding-top for smaller header */
         height: auto; /* Adjusted height for very small mobile, balancing illustration/textbox */
         aspect-ratio: 1920 / 900;
-        max-height: calc(100vh - 60vh);
+        max-height: calc(100vh - 80vh);
         align-items: stretch;
         object-fit: cover;
     }
