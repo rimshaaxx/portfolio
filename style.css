@@ -395,18 +395,16 @@ body {
     margin-bottom: 25px; /* Space above the arrow */
     flex-grow: 1; /* Allows descriptions of different lengths to push arrow down */
 }
-
-.card-arrow {
-    font-family: 'Open Sans', sans-serif; /* Matched to image */
-    font-size: 1.5em; /* Size of the arrow */
-    color: #FFFFFF; /* Pure white arrow */
-    font-weight: bold;
-    opacity: 1; /* Slightly dimmed to indicate more content */
-    transition: opacity 0.3s ease;
+.fa-icon {
+    font-size: 2em; /* Size of the icon */
+    color: #e75480; /* Accent color for the icon, matching your scroll arrow */
+    opacity: 0.8; /* Slightly dimmed by default */
+    transition: color 0.3s ease, opacity 0.3s ease;
 }
 
-.expertise-card:hover .card-arrow {
-    opacity: 0.8; /* Arrow brightens on hover */
+.expertise-card:hover .fa-icon {
+    color: #FFFFFF; /* Icon brightens to pure white on hover */
+    opacity: 1;
 }
 
 
@@ -654,6 +652,377 @@ body {
     background-attachment: scroll; /* Scrolls with content */
 }
 
+.work-content-wrapper {
+    max-width: 1200px; /* Adjust to control the overall width of your content as in the image */
+    margin: 0 auto; /* Center the wrapper, leaving background space on sides */
+    padding: 0 20px; /* Internal padding for content within the wrapper */
+    position: relative; /* For z-index of content above background */
+    z-index: 2; /* Ensure content is above background image */
+}
+.work-sub-heading {
+    font-family: 'Playfair Display', serif; /* Elegant serif font from image */
+    font-size: clamp(2.8em, 4vw, 3.2em); /* Responsive font size */
+    font-weight: 700; /* Bolder */
+    color: #8A2BE2; /* A vibrant purple color from your design */
+    margin-top: 30px; /* Space above this heading */
+    margin-bottom: 30px; /* Space below this heading */
+    text-align: center; /* Center the text */
+    line-height: 1.2;
+    position: relative;
+    
+}
+.work-sub-heading::after {
+    content: ''; /* Required for pseudo-elements */
+    display: block; /* Make it a block element so it takes full width */
+    width: 100%; /* Make it span the full width of the text */
+    height: 2.5px; /* Thickness of the line */
+    background-color: #7e09b4; /* White color for the line, matching MY WORK */
+    position: absolute; /* Position relative to the .work-sub-heading */
+    bottom: -8px; /* Adjust this value to control the space between text and line */
+    left: 50%; /* Center the line horizontally */
+    transform: translateX(-50%); /* Fine-tune centering */
+}
+.logo-designs-sub-heading-wrapper {
+    max-width: 1000px; /* Match the max-width of your .logo-designs-grid */
+    margin: 0 auto; /* Center this wrapper */
+    padding: 0 20px; /* Match horizontal padding of .work-content-wrapper */
+    text-align: left; /* Align text to the right within this wrapper */
+    margin-top: 10px; /* Pull it up slightly to reduce space from previous line */
+    margin-bottom: 30px; /* Space below this heading and above the grid */
+}
+.logo-designs-sub-heading {
+    font-family: 'playfair-display', serif; /* Using Open Sans for readability */
+    font-size: clamp(2.2em, 3vw, 2.5em); /* Responsive font size */
+    font-weight: 700; /* Regular weight */
+    color: #bdc006; /* Light grey for subtle contrast */
+    line-height: 1.1;
+    display: inline-block; /* Allows text-align: right to work correctly */
+    position: relative;
+}
+.logo-designs-sub-heading::after {
+    content: ''; /* Required for pseudo-elements */
+    display: block; /* Make it a block element so it takes full width */
+    width: 100%; /* Make it span the full width of the text */
+    height: 2.5px; /* Thickness of the line */
+    background-color: #eedf0c; /* White color for the line, matching MY WORK */
+    position: absolute; /* Position relative to the .work-sub-heading */
+    bottom: -8px; /* Adjust this value to control the space between text and line */
+    left: 50%; /* Center the line horizontally */
+    transform: translateX(-50%); /* Fine-tune centering */
+}
+.logo-designs-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns on desktop */
+    gap: 25px; /* Space between logo cards */
+    margin-top: 50px; /* Space above this grid */
+    margin-bottom: 50px; /* Space below this grid */
+    max-width: 1000px; /* Limit width to align with other content */
+    margin-left: auto; /* Center the grid */
+    margin-right: auto; /* Center the grid */
+}
+.logo-design-card {
+    background-color: #2e0426e5; /* Dark background for the card */
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden; /* Ensures image corners are rounded */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3px; /* Padding inside the card, around the image */
+    
+    /* Glowing Border Effect (always on, similar to expertise cards' hover glow) */
+    border: 1.5px solid rgba(82, 1, 1, 0.945); /* Subtle inner border */
+    box-shadow: 0 0 8px rgba(240, 7, 221, 0.856), /* Purple glow */
+                0 0 15px rgba(250, 2, 118, 0.658); /* Blue glow */
+    transition: transform 0.5s ease, box-shadow 0.5s ease; /* Smooth hover effect */
+    cursor: pointer;
+}
 
+.logo-design-card:hover {
+    transform: translateY(-9px); /* Lift card slightly on hover */
+    box-shadow: 0 0 15px rgba(68, 5, 241, 0.822), /* Brighter purple glow on hover */
+                0 0 25px rgba(182, 247, 4, 0.5); /* Brighter blue glow on hover */
+                
+}
 
+.logo-design-image {
+    max-width: 100%; /* Ensure image fits within its card */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove extra space below images */
+    object-fit: contain; /* Ensure entire image is visible */
+}
 
+/* Temporary placeholder for bottom of work section */
+.work-section-bottom-placeholder {
+    min-height: 100px; /* Just to give some space */
+    background-color: transparent;
+}
+.business-card-designs-sub-heading-wrapper {
+    max-width: 1000px; /* Match the max-width of your .logo-designs-grid */
+    margin: 0 auto; /* Center this wrapper */
+    padding: 0 20px; /* Match horizontal padding of .work-content-wrapper */
+    text-align: left; /* Align text to the right within this wrapper */
+    margin-top: 10px; /* Pull it up slightly to reduce space from previous line */
+    margin-bottom: 30px; /* Space below this heading and above the grid */
+}
+.business-card-designs-sub-heading {
+    font-family: 'playfair-display', serif; /* Using Open Sans for readability */
+    font-size: clamp(2.2em, 3vw, 2.5em); /* Responsive font size */
+    font-weight: 700; /* Regular weight */
+    color: #bdc006; /* Light grey for subtle contrast */
+    line-height: 1.1;
+    display: inline-block; /* Allows text-align: right to work correctly */
+    position: relative;
+}
+.business-card-designs-sub-heading::after {
+    content: ''; /* Required for pseudo-elements */
+    display: block; /* Make it a block element so it takes full width */
+    width: 100%; /* Make it span the full width of the text */
+    height: 2.5px; /* Thickness of the line */
+    background-color: #eedf0c; /* White color for the line, matching MY WORK */
+    position: absolute; /* Position relative to the .work-sub-heading */
+    bottom: -8px; /* Adjust this value to control the space between text and line */
+    left: 50%; /* Center the line horizontally */
+    transform: translateX(-50%); /* Fine-tune centering */
+}
+.business-card-designs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns on desktop */
+    gap: 25px; /* Space between cards */
+    margin-top: 50px; /* Space above this grid */
+    margin-bottom: 50px; /* Space below this grid */
+    max-width: 1000px; /* Limit width to align with other content */
+    margin-left: auto; /* Center the grid */
+    margin-right: auto; /* Center the grid */
+    position: relative;
+}
+.business-card-designs-grid .business-card-carousel {
+    display: contents; /* Makes children participate in grid layout on desktop */
+    gap: 25px; /* Re-apply gap for desktop grid */
+}
+.business-card-designs-grid .carousel-nav-arrow {
+    display: none; /* Hide arrows on desktop */
+}
+
+/* Temporary placeholder for bottom of work section */
+.work-section-bottom-placeholder {
+    min-height: 100px; /* Just to give some space */
+    background-color: transparent;
+}
+
+/* --- RESPONSIVE ADJUSTMENTS for MY WORK SECTION --- */
+
+@media (max-width: 1024px) {
+    .work-content-wrapper {
+        padding: 0 15px;
+    }
+    .work-sub-heading {
+        font-size: clamp(2em, 3.5vw, 2.5em); /* Adjusted for smaller desktop */
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+    .work-sub-heading::after {
+        width: 50%; /* Adjust line width for smaller heading */
+        bottom: -6px;
+    }
+    .logo-designs-sub-heading-wrapper, .business-card-sub-heading-wrapper {
+        max-width: 900px; /* Adjust max-width for tablets */
+        padding: 0 15px;
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+    .logo-designs-sub-heading, .business-card-sub-heading {
+        font-size: clamp(1.8em, 2.5vw, 2.2em); /* Adjusted for smaller desktop */
+    }
+    .logo-designs-sub-heading::after, .business-card-sub-heading::after {
+        bottom: -6px;
+    }
+    .logo-designs-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+        gap: 20px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        max-width: 900px; /* Adjust max-width for tablets */
+    }
+    .logo-design-card {
+        padding: 10px; /* Reduce padding for smaller screens */
+    }
+    .business-card-designs-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+        gap: 20px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        max-width: 900px;
+    }
+    .business-card-designs-grid .business-card-carousel {
+        display: grid; /* Ensure inner carousel is grid on tablets */
+        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .work-content-wrapper {
+        padding: 0 10px;
+    }
+    .work-sub-heading {
+        font-size: clamp(1.5em, 2.8vw, 2em); /* Adjusted for mobile */
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .work-sub-heading::after {
+        width: 60%; /* Adjust line width for smaller heading */
+        bottom: -5px;
+    }
+    .logo-designs-sub-heading-wrapper, .business-card-sub-heading-wrapper {
+        max-width: 95%; /* Allow wider on mobile */
+        padding: 0 10px;
+        margin-top: 25px;
+        margin-bottom: 15px;
+        text-align: left; /* Center on mobile */
+    }
+    .logo-designs-sub-heading, .business-card-sub-heading {
+        font-size: clamp(1.5em, 2.2vw, 1.8em); /* Adjusted for mobile */
+    }
+    .logo-designs-sub-heading::after, .business-card-sub-heading::after {
+        bottom: -5px;
+    }
+    .logo-designs-grid {
+        grid-template-columns: repeat(2, 1fr); /* Still 2 columns on mobile (tablets) */
+        gap: 15px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        max-width: 95%; /* Allow it to be wider on mobile */
+    }
+    .logo-design-card {
+        padding: 8px; /* Further reduce padding */
+    }
+    .business-card-designs-grid {
+        display: flex; /* Change to flex for carousel */
+        flex-wrap: nowrap; /* Prevent wrapping */
+        overflow: hidden; /* Hide content outside */
+        position: relative; /* For arrow positioning */
+        padding: 0 40px; /* Space for arrows */
+        gap: 0; /* No gap on the grid itself, gap handled by cards */
+        margin-top: 30px;
+        margin-bottom: 30px;
+        max-width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .business-card-design-grid .business-card-carousel {
+        display: flex;
+        overflow-x: scroll; /* Enable horizontal scrolling */
+        scroll-snap-type: x mandatory; /* Snap to cards */
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+        scrollbar-width: none; /* Hide scrollbar for Firefox */
+        gap: 15px; /* Space between cards in carousel */
+        padding-bottom: 10px; /* Ensure space if scrollbar briefly appears */
+    }
+    .business-card-design-grid .business-card-carousel::-webkit-scrollbar {
+        display: none; /* Hide scrollbar for Webkit browsers */
+    }
+
+    .business-card-design-grid .business-card-carousel .logo-design-card {
+        flex: 0 0 calc(50% - 7.5px); /* Two cards side-by-side, accounting for gap */
+        scroll-snap-align: start; /* Snap to the start of each card */
+        min-height: 200px; /* Ensure cards have a minimum height */
+        padding: 15px; /* Adjust padding for mobile cards */
+    }
+
+    .business-card-design-grid .carousel-nav-arrow {
+        display: flex; /* Show arrows */
+    }
+    .carousel-nav-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+        color: #fff;
+        border: none;
+        border-radius: 50%;
+        width: 35px;
+        height: 35px;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        z-index: 10;
+        font-size: 1.2em;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .carousel-nav-arrow:hover {
+        background-color: rgba(138, 43, 226, 0.8); /* Purple accent on hover */
+    }
+    .carousel-nav-arrow.left {
+        left: 5px;
+    }
+    .carousel-nav-arrow.right {
+        right: 5px;
+    }
+    .carousel-nav-arrow:disabled {
+        opacity: 0.3;
+        cursor: not-allowed;
+    }
+}
+
+@media (max-width: 480px) {
+    .work-content-wrapper {
+        padding: 0 10px;
+    }
+    .work-sub-heading {
+        font-size: clamp(1.5em, 2.8vw, 2em); /* Adjusted for mobile */
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .work-sub-heading::after {
+        width: 60%; /* Adjust line width for smaller heading */
+        bottom: -5px;
+    }
+    .logo-designs-sub-heading-wrapper, .business-card-sub-heading-wrapper {
+        max-width: 95%; /* Allow wider on mobile */
+        padding: 0 10px;
+        margin-top: 25px;
+        margin-bottom: 15px;
+        text-align: left; /* Center on mobile */
+    }
+    .logo-designs-sub-heading, .business-card-sub-heading {
+        font-size: clamp(1.5em, 2.2vw, 1.8em); /* Adjusted for mobile */
+    }
+    .logo-designs-sub-heading::after, .business-card-sub-heading::after {
+        bottom: -5px;
+    }
+    .logo-designs-grid {
+        grid-template-columns: repeat(2, 1fr); /* Still 2 columns on mobile (tablets) */
+        gap: 15px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        max-width: 95%; /* Allow it to be wider on mobile */
+    }
+    .logo-design-card {
+        padding: 8px; /* Further reduce padding */
+    }
+    .business-card-designs-grid {
+       display: flex; /* Change to flex for carousel */
+        flex-wrap: nowrap; /* Prevent wrapping */
+        overflow: hidden; /* Hide content outside */
+        position: relative; /* For arrow positioning */
+        padding: 0 40px; /* Space for arrows */
+        gap: 0; /* No gap on the grid itself, gap handled by cards */
+        margin-top: 30px;
+        margin-bottom: 30px;
+        max-width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .business-card-designs-grid .business-card-carousel {
+        gap: 10px; /* Smaller gap for very small phones */
+    }
+    .business-card-designs-grid .business-card-carousel .logo-design-card {
+        flex: 0 0 calc(100% - 10px); /* One card per view on very small phones */
+        padding: 10px;
+    }
+    .business-card-designs-grid .carousel-nav-arrow {
+        width: 30px;
+        height: 30px;
+        font-size: 1em;
+    }
+}
