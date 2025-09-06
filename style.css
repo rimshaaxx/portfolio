@@ -682,36 +682,29 @@ body {
     left: 50%; /* Center the line horizontally */
     transform: translateX(-50%); /* Fine-tune centering */
 }
-.logo-designs-sub-heading-wrapper {
-    max-width: 1000px; /* Match the max-width of your .logo-designs-grid */
-    margin: 0 auto; /* Center this wrapper */
-    padding: 0 20px; /* Match horizontal padding of .work-content-wrapper */
-    text-align: left; /* Align text to the right within this wrapper */
-    margin-top: 10px; /* Pull it up slightly to reduce space from previous line */
-    margin-bottom: 30px; /* Space below this heading and above the grid */
+/* --- LOGO DESIGN SECTION --- */
+.logo-design-section {
+    background-color: #00000000; /* Fallback black background */
+    color: #e7f713;
+    padding-top: 20px; /* Minimal space above content */
+    padding-bottom: 0; /* No extra padding here as divider has margin */
+    text-align: center; /* Center overall content */
+    overflow: hidden; /* Crucial for background shapes */
+    position: relative; /* For background shapes positioning */
 }
-.logo-designs-sub-heading {
-    font-family: 'playfair-display', serif; /* Using Open Sans for readability */
-    font-size: clamp(2.2em, 3vw, 2.5em); /* Responsive font size */
-    font-weight: 700; /* Regular weight */
-    color: #bdc006; /* Light grey for subtle contrast */
-    line-height: 1.1;
-    display: inline-block; /* Allows text-align: right to work correctly */
+.logo-design-wrapper {
+    max-width: 1000px; /* Adjust to control the overall width of your content */
+    margin: 0 auto; /* Center the wrapper */
+    padding: 0 20px; /* Internal padding for content within the wrapper */
     position: relative;
+    z-index: 2;
 }
-.logo-designs-sub-heading::after {
-    content: ''; /* Required for pseudo-elements */
-    display: block; /* Make it a block element so it takes full width */
-    width: 100%; /* Make it span the full width of the text */
-    height: 2.5px; /* Thickness of the line */
-    background-color: #eedf0c; /* White color for the line, matching MY WORK */
-    position: absolute; /* Position relative to the .work-sub-heading */
-    bottom: -8px; /* Adjust this value to control the space between text and line */
-    left: 50%; /* Center the line horizontally */
-    transform: translateX(-50%); /* Fine-tune centering */
+.logo-design-section .section-title {
+    color: #FFD700; /* Bright yellow color (Gold). You can adjust this hex code. */
+    /* Ensure this rule comes AFTER the general .section-title rule to override it */
 }
-.logo-designs-grid {
-    display: grid;
+.logo-design-grid {
+    display: grid; /* Explicitly set for desktop */
     grid-template-columns: repeat(4, 1fr); /* 4 columns on desktop */
     gap: 25px; /* Space between logo cards */
     margin-top: 50px; /* Space above this grid */
@@ -727,7 +720,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 3px; /* Padding inside the card, around the image */
+    padding: 1px; /* Padding inside the card, around the image */
     
     /* Glowing Border Effect (always on, similar to expertise cards' hover glow) */
     border: 1.5px solid rgba(82, 1, 1, 0.945); /* Subtle inner border */
@@ -741,7 +734,6 @@ body {
     transform: translateY(-9px); /* Lift card slightly on hover */
     box-shadow: 0 0 15px rgba(68, 5, 241, 0.822), /* Brighter purple glow on hover */
                 0 0 25px rgba(182, 247, 4, 0.5); /* Brighter blue glow on hover */
-                
 }
 
 .logo-design-image {
@@ -750,42 +742,66 @@ body {
     display: block; /* Remove extra space below images */
     object-fit: contain; /* Ensure entire image is visible */
 }
+@media (max-width: 1024px) {
+    .logo-design-grid {
+        grid-template-columns: repeat(2, 1fr); /* KEY: 2 columns on tablets */
+        gap: 20px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        max-width: 900px; /* Adjust max-width for tablets */
+    }
+    .logo-design-card {
+        padding: 1px; /* Reduce padding for smaller screens */
+    }
+}
+@media (max-width: 768px) {
+    .logo-design-grid {
+        grid-template-columns: repeat(2, 1fr); /* KEY: 2 columns on tablets/half-screen */
+        gap: 15px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        max-width: 95%; /* Allow it to be wider on mobile */
+    }
+    .logo-design-card {
+        padding: 1px; /* Further reduce padding */
+    }
+}
+@media (max-width: 480px) {
+.logo-design-grid {
+        grid-template-columns: repeat(2, 1fr); /* KEY: 2 columns on very small phones */
+        gap: 15px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .logo-design-card {
+        padding: 1px; /* Minimal padding */
+    }
+}
 
-/* Temporary placeholder for bottom of work section */
-.work-section-bottom-placeholder {
-    min-height: 100px; /* Just to give some space */
-    background-color: transparent;
+/* --- BUSINESS CARD SECTION --- */
+.business-card-section {
+    background-color: #00000000; /* Fallback black background */
+    color: #e7f713;
+    padding-top: 20px; /* Minimal space above content */
+    padding-bottom: 0; /* No extra padding here as divider has margin */
+    text-align: center; /* Center overall content */
+    overflow: hidden; /* Crucial for background shapes */
+    position: relative; /* For background shapes positioning */
 }
-.business-card-designs-sub-heading-wrapper {
-    max-width: 1000px; /* Match the max-width of your .logo-designs-grid */
-    margin: 0 auto; /* Center this wrapper */
-    padding: 0 20px; /* Match horizontal padding of .work-content-wrapper */
-    text-align: left; /* Align text to the right within this wrapper */
-    margin-top: 10px; /* Pull it up slightly to reduce space from previous line */
-    margin-bottom: 30px; /* Space below this heading and above the grid */
-}
-.business-card-designs-sub-heading {
-    font-family: 'playfair-display', serif; /* Using Open Sans for readability */
-    font-size: clamp(2.2em, 3vw, 2.5em); /* Responsive font size */
-    font-weight: 700; /* Regular weight */
-    color: #bdc006; /* Light grey for subtle contrast */
-    line-height: 1.1;
-    display: inline-block; /* Allows text-align: right to work correctly */
+.business-card-wrapper {
+    max-width: 1000px; /* Adjust to control the overall width of your content */
+    margin: 0 auto; /* Center the wrapper */
+    padding: 0 20px; /* Internal padding for content within the wrapper */
     position: relative;
+    z-index: 2;
 }
-.business-card-designs-sub-heading::after {
-    content: ''; /* Required for pseudo-elements */
-    display: block; /* Make it a block element so it takes full width */
-    width: 100%; /* Make it span the full width of the text */
-    height: 2.5px; /* Thickness of the line */
-    background-color: #eedf0c; /* White color for the line, matching MY WORK */
-    position: absolute; /* Position relative to the .work-sub-heading */
-    bottom: -8px; /* Adjust this value to control the space between text and line */
-    left: 50%; /* Center the line horizontally */
-    transform: translateX(-50%); /* Fine-tune centering */
+.business-card-section .section-title {
+    color: #FFD700; /* Bright yellow color (Gold). You can adjust this hex code. */
+    /* Ensure this rule comes AFTER the general .section-title rule to override it */
 }
-.business-card-designs-grid {
-    display: grid;
+
+.business-card-grid {
+    display: grid; /* Explicitly set for desktop */
     grid-template-columns: repeat(3, 1fr); /* 3 columns on desktop */
     gap: 25px; /* Space between cards */
     margin-top: 50px; /* Space above this grid */
@@ -793,236 +809,529 @@ body {
     max-width: 1000px; /* Limit width to align with other content */
     margin-left: auto; /* Center the grid */
     margin-right: auto; /* Center the grid */
-    position: relative;
+    position: relative; /* Needed for absolute positioning of arrows on mobile */
 }
-.business-card-designs-grid .business-card-carousel {
-    display: contents; /* Makes children participate in grid layout on desktop */
-    gap: 25px; /* Re-apply gap for desktop grid */
-}
-.business-card-designs-grid .carousel-nav-arrow {
-    display: none; /* Hide arrows on desktop */
-}
-
-/* Temporary placeholder for bottom of work section */
-.work-section-bottom-placeholder {
-    min-height: 100px; /* Just to give some space */
-    background-color: transparent;
-}
-
-/* --- RESPONSIVE ADJUSTMENTS for MY WORK SECTION --- */
-
 @media (max-width: 1024px) {
-    .work-content-wrapper {
-        padding: 0 15px;
-    }
-    .work-sub-heading {
-        font-size: clamp(2em, 3.5vw, 2.5em); /* Adjusted for smaller desktop */
-        margin-top: 25px;
-        margin-bottom: 25px;
-    }
-    .work-sub-heading::after {
-        width: 50%; /* Adjust line width for smaller heading */
-        bottom: -6px;
-    }
-    .logo-designs-sub-heading-wrapper, .business-card-sub-heading-wrapper {
-        max-width: 900px; /* Adjust max-width for tablets */
-        padding: 0 15px;
-        margin-top: 30px;
-        margin-bottom: 20px;
-    }
-    .logo-designs-sub-heading, .business-card-sub-heading {
-        font-size: clamp(1.8em, 2.5vw, 2.2em); /* Adjusted for smaller desktop */
-    }
-    .logo-designs-sub-heading::after, .business-card-sub-heading::after {
-        bottom: -6px;
-    }
-    .logo-designs-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
-        gap: 20px;
-        margin-top: 40px;
-        margin-bottom: 40px;
-        max-width: 900px; /* Adjust max-width for tablets */
-    }
-    .logo-design-card {
-        padding: 10px; /* Reduce padding for smaller screens */
-    }
-    .business-card-designs-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+    .business-card-grid {
+        grid-template-columns: repeat(3, 1fr); /* KEY: 3 columns on tablets */
         gap: 20px;
         margin-top: 40px;
         margin-bottom: 40px;
         max-width: 900px;
     }
-    .business-card-designs-grid .business-card-carousel {
-        display: grid; /* Ensure inner carousel is grid on tablets */
-        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+}
+ @media (max-width: 768px) {
+    .business-card-grid {
+        grid-template-columns: repeat(3, 1fr); /* KEY: 3 columns on tablets/half-screen */
+        gap: 15px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        max-width: 95%;
+    }
+ }
+ @media (max-width: 480px) {
+        .business-card-grid {
+        grid-template-columns: repeat(3, 1fr); /* KEY: 3 columns on very small phones */
+        gap: 15px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+ }
+
+/* --- MARKETING VISUALS SECTION --- */
+
+
+.marketing-visuals-section {
+    background-color: #00000075; /* Fallback black background */
+    color: #e7f713;
+    padding-top: 20px; /* Minimal space above content */
+    padding-bottom: 0; /* No extra padding here as divider has margin */
+    text-align: center; /* Center overall content */
+    overflow: hidden; /* Crucial for background shapes */
+    position: relative; /* For background shapes positioning */
+
+    /* You can add a background image/pattern here, similar to your work-section */
+    /* background-image: url('images/marketing-bg.png'); */
+    /* background-size: cover; */
+    /* background-position: center center; */
+    /* background-repeat: no-repeat; */
+}
+
+.marketing-content-wrapper {
+    max-width: 1200px; /* Adjust to control the overall width of your content */
+    margin: 0 auto; /* Center the wrapper */
+    padding: 0 20px; /* Internal padding for content within the wrapper */
+    position: relative;
+    z-index: 2;
+}
+.marketing-visuals-section .section-title {
+    color: #FFD700; /* Bright yellow color (Gold). You can adjust this hex code. */
+    /* Ensure this rule comes AFTER the general .section-title rule to override it */
+}
+
+/* Common Section Title (MARKETING VISUALS) - uses .section-title */
+/* .section-title { ... } */
+
+.marketing-images-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns on desktop */
+    gap: 25px; /* Space between image cards */
+    margin-top: 50px; /* Space below heading */
+    margin-bottom: 50px; /* Space below this grid */
+    max-width: 1000px; /* Limit width to align with other content */
+    margin-left: auto; /* Center the grid */
+    margin-right: auto; /* Center the grid */
+}
+
+.marketing-image-card {
+    background-color: #1a1a1a00; /* Dark background for the card */
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden; /* Ensures image corners are rounded */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3px; /* Padding inside the card, around the image */
+    
+    /* Glowing Border Effect (consistent with logo designs) */
+    border: 1.5px solid rgba(255, 255, 255, 0.2); /* Subtle inner border */
+    box-shadow: 0 0 8px rgba(138, 43, 226, 0.4), /* Purple glow */
+                0 0 15px rgba(0, 0, 139, 0.3); /* Blue glow */
+    transition: transform 0.5s ease, box-shadow 0.5s ease; /* Smooth hover effect */
+    cursor: pointer;
+}
+
+.marketing-image-card:hover {
+    transform: translateY(-9px); /* Lift card slightly on hover */
+    box-shadow: 0 0 15px rgba(68, 5, 241, 0.822), /* Brighter purple glow on hover */
+                0 0 25px rgba(182, 247, 4, 0.5); /* Brighter blue glow on hover */
+}
+
+.marketing-image {
+    max-width: 100%; /* Ensure image fits within its card */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove extra space below images */
+    object-fit: contain; /* Ensure entire image is visible */
+}
+
+
+/* --- RESPONSIVE ADJUSTMENTS for MARKETING VISUALS SECTION --- */
+
+@media (max-width: 1024px) {
+    .marketing-content-wrapper {
+        padding: 0 15px;
+    }
+    .marketing-images-grid {
+        grid-template-columns: repeat(3, 1fr); /* Keep 3 columns on smaller desktops */
         gap: 20px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        max-width: 900px;
+    }
+    .marketing-image-card {
+        padding: 3px;
     }
 }
 
 @media (max-width: 768px) {
-    .work-content-wrapper {
+    .marketing-content-wrapper {
         padding: 0 10px;
     }
-    .work-sub-heading {
-        font-size: clamp(1.5em, 2.8vw, 2em); /* Adjusted for mobile */
-        margin-top: 20px;
-        margin-bottom: 20px;
-    }
-    .work-sub-heading::after {
-        width: 60%; /* Adjust line width for smaller heading */
-        bottom: -5px;
-    }
-    .logo-designs-sub-heading-wrapper, .business-card-sub-heading-wrapper {
-        max-width: 95%; /* Allow wider on mobile */
-        padding: 0 10px;
-        margin-top: 25px;
-        margin-bottom: 15px;
-        text-align: left; /* Center on mobile */
-    }
-    .logo-designs-sub-heading, .business-card-sub-heading {
-        font-size: clamp(1.5em, 2.2vw, 1.8em); /* Adjusted for mobile */
-    }
-    .logo-designs-sub-heading::after, .business-card-sub-heading::after {
-        bottom: -5px;
-    }
-    .logo-designs-grid {
-        grid-template-columns: repeat(2, 1fr); /* Still 2 columns on mobile (tablets) */
+    .marketing-images-grid {
+        grid-template-columns: repeat(2, 1fr); /* KEY: 2 columns on tablets/half-screen */
         gap: 15px;
         margin-top: 30px;
         margin-bottom: 30px;
         max-width: 95%; /* Allow it to be wider on mobile */
     }
-    .logo-design-card {
-        padding: 8px; /* Further reduce padding */
-    }
-    .business-card-designs-grid {
-        display: flex; /* Change to flex for carousel */
-        flex-wrap: nowrap; /* Prevent wrapping */
-        overflow: hidden; /* Hide content outside */
-        position: relative; /* For arrow positioning */
-        padding: 0 40px; /* Space for arrows */
-        gap: 0; /* No gap on the grid itself, gap handled by cards */
-        margin-top: 30px;
-        margin-bottom: 30px;
-        max-width: 95%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .business-card-design-grid .business-card-carousel {
-        display: flex;
-        overflow-x: scroll; /* Enable horizontal scrolling */
-        scroll-snap-type: x mandatory; /* Snap to cards */
-        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-        scrollbar-width: none; /* Hide scrollbar for Firefox */
-        gap: 15px; /* Space between cards in carousel */
-        padding-bottom: 10px; /* Ensure space if scrollbar briefly appears */
-    }
-    .business-card-design-grid .business-card-carousel::-webkit-scrollbar {
-        display: none; /* Hide scrollbar for Webkit browsers */
-    }
-
-    .business-card-design-grid .business-card-carousel .logo-design-card {
-        flex: 0 0 calc(50% - 7.5px); /* Two cards side-by-side, accounting for gap */
-        scroll-snap-align: start; /* Snap to the start of each card */
-        min-height: 200px; /* Ensure cards have a minimum height */
-        padding: 15px; /* Adjust padding for mobile cards */
-    }
-
-    .business-card-design-grid .carousel-nav-arrow {
-        display: flex; /* Show arrows */
-    }
-    .carousel-nav-arrow {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
-        color: #fff;
-        border: none;
-        border-radius: 50%;
-        width: 35px;
-        height: 35px;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        z-index: 10;
-        font-size: 1.2em;
-        transition: background-color 0.3s ease, color 0.3s ease;
-    }
-    .carousel-nav-arrow:hover {
-        background-color: rgba(138, 43, 226, 0.8); /* Purple accent on hover */
-    }
-    .carousel-nav-arrow.left {
-        left: 5px;
-    }
-    .carousel-nav-arrow.right {
-        right: 5px;
-    }
-    .carousel-nav-arrow:disabled {
-        opacity: 0.3;
-        cursor: not-allowed;
+    .marketing-image-card {
+        padding: 3px;
     }
 }
 
 @media (max-width: 480px) {
-    .work-content-wrapper {
-        padding: 0 10px;
+    .marketing-content-wrapper {
+        padding: 0 5px;
     }
-    .work-sub-heading {
-        font-size: clamp(1.5em, 2.8vw, 2em); /* Adjusted for mobile */
+    .marketing-images-grid {
+        grid-template-columns: repeat(2, 1fr); /* KEY: Still 2 columns on very small phones */
+        gap: 10px; /* Smaller gap for very small phones */
         margin-top: 20px;
         margin-bottom: 20px;
+        max-width: 100%;
     }
-    .work-sub-heading::after {
-        width: 60%; /* Adjust line width for smaller heading */
-        bottom: -5px;
+    .marketing-image-card {
+        padding: 2px;
     }
-    .logo-designs-sub-heading-wrapper, .business-card-sub-heading-wrapper {
+}
+/* --- UI/UX DESIGN SECTION --- */
+.ui-ux-section {
+    background-color: #00000000; /* Pure black background */
+    color: #ffffff00;
+    padding-top: 20px; /* Minimal space above content */
+    padding-bottom: 0; /* No extra padding here as divider has margin */
+    text-align: center; /* Center overall content */
+    overflow: hidden;
+    position: relative;
+}
+
+.ui-ux-content-wrapper {
+    max-width: 2050px; /* Limit content width for readability */
+    margin: 0 auto; /* Center the wrapper */
+    padding: 0 40px; /* Horizontal padding for content */
+    position: relative;
+    z-index: 2;
+}
+
+
+
+/* Main Heading: SKILL SWAP - A SKILL EXCHANGE MOBILE APP */
+.ui-ux-main-heading {
+    font-family: 'open-sans', sans-serif; /* Bold, wide font */
+    font-size: clamp(1.5em, 3vw, 2em); /* Responsive font size */
+    font-weight: 800; /* Extra bold */
+    color: #fff;
+    line-height: 1.1; /* Tight line height */
+    text-transform: uppercase;
+    margin-top: 50px; /* Space below category heading's underline */
+    margin-bottom: 30px; /* Space above sub-heading */
+    position: relative; /* For custom double underline */
+    display: inline-block; /* For underline width */
+    letter-spacing: 1px; /* Slight letter spacing */
+}
+
+
+.ui-ux-main-heading::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%; /* Spans full width of text */
+    height: 2px; /* Thickness of line */
+    background-color: #fff; /* White line */
+}
+.ui-ux-main-heading::before {
+    bottom: -10px; /* First line below text */
+}
+.ui-ux-main-heading::after {
+    bottom: -18px; /* Second line below first line */
+}
+
+
+/* Sub-Heading: PROJECT-OVERVIEW */
+.ui-ux-sub-heading {
+    font-family: 'open-sans', sans-serif; /* Consistent bold font */
+    font-size: clamp(1.1em, 2.8vw, 2.1em); /* Responsive font size */
+    font-weight: 700; /* Bold */
+    color: #fff;
+    line-height: 1.2;
+    text-transform: uppercase;
+    margin-top: 60px; /* Space below main heading's double underline */
+    margin-bottom: 20px; /* Space above description */
+    text-align: left; /* Align left as in image */
+    max-width: 800px; /* Limit width for centering */
+    margin-left: auto;
+    margin-right: auto;
+    letter-spacing: 0.5px;
+}
+
+/* Description Paragraph: A MOBILE APP CONCEPT... */
+.ui-ux-description {
+    font-family: 'open-sans', sans-serif; /* Consistent bold font */
+    font-size: clamp(1.2em, 2.5vw, 1.8em); /* Responsive font size */
+    font-weight: 700; /* Bold */
+    color: #fff;
+    line-height: 1.4; /* Slightly more relaxed line height for paragraph */
+    text-transform: auto;
+    margin-bottom: 50px; /* Space above video */
+    text-align: left; /* Align left as in image */
+    max-width: 800px; /* Limit width for centering */
+    margin-left: auto;
+    margin-right: auto;
+    letter-spacing: 0.2px;
+}
+
+/* Media Containers (for Video and Image) */
+.ui-ux-media-container {
+    max-width: 800px; /* Limit width of media for centering */
+    margin: 0 auto; /* Center media */
+    margin-bottom: 40px; /* Space between media items */
+    overflow: hidden; /* Ensure media fits */
+    /* NO BORDERS HERE */
+}
+
+.ui-ux-video,
+.ui-ux-image {
+    width: 100%; /* Fill container width */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove extra space below inline elements */
+    object-fit: contain; /* Ensure entire media is visible, no cropping */
+    /* NO BORDERS HERE */
+}
+
+
+/* --- RESPONSIVE ADJUSTMENTS for UI/UX DESIGN SECTION --- */
+
+@media (max-width: 1024px) {
+    .ui-ux-content-wrapper {
+        padding: 0 30px;
+    }
+    .ui-ux-category-heading {
+        font-size: clamp(1.5em, 3vw, 2em);
+        margin-top: 40px;
+        margin-bottom: 25px;
+    }
+    .ui-ux-category-heading::after { bottom: -6px; height: 1.5px; }
+    .ui-ux-main-heading {
+        font-size: clamp(2em, 4vw, 3em);
+        margin-top: 40px;
+        margin-bottom: 25px;
+    }
+    .ui-ux-main-heading::before { bottom: -8px; }
+    .ui-ux-main-heading::after { bottom: -15px; }
+    .ui-ux-sub-heading {
+        font-size: clamp(1.3em, 2.5vw, 2em);
+        margin-top: 40px;
+        margin-bottom: 15px;
+    }
+    .ui-ux-description {
+        font-size: clamp(1em, 2vw, 1.5em);
+        margin-bottom: 40px;
+    }
+    .ui-ux-media-container {
+        max-width: 700px;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .ui-ux-content-wrapper {
+        padding: 0 20px;
+    }
+    .ui-ux-main-heading {
+        font-size: clamp(1.4em, 2.5vw, 2.1em);
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+    .ui-ux-main-heading::before { bottom: -7px; height: 1.5px; }
+    .ui-ux-main-heading::after { bottom: -13px; height: 1.5px; }
+    .ui-ux-sub-heading {
+        font-size: clamp(1.2em, 2vw, 1.8em);
+        margin-top: 30px;
+        margin-bottom: 10px;
+        text-align: center; /* Center on mobile */
+    }
+    .ui-ux-description {
+        font-size: clamp(0.9em, 1.8vw, 1.2em);
+        margin-bottom: 30px;
+        text-align: center; /* Center on mobile */
+    }
+    .ui-ux-media-container {
         max-width: 95%; /* Allow wider on mobile */
-        padding: 0 10px;
+        margin-bottom: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .ui-ux-content-wrapper {
+        padding: 0 15px;
+    }
+    .ui-ux-main-heading {
+        font-size: clamp(1.1em, 2.8vw, 1.8em);
         margin-top: 25px;
         margin-bottom: 15px;
-        text-align: left; /* Center on mobile */
     }
-    .logo-designs-sub-heading, .business-card-sub-heading {
-        font-size: clamp(1.5em, 2.2vw, 1.8em); /* Adjusted for mobile */
+    
+    .ui-ux-main-heading::after { bottom: -11px; height: 1px; }
+    .ui-ux-sub-heading {
+        font-size: clamp(1em, 1.8vw, 1.5em);
+        margin-top: 20px;
+        margin-bottom: 8px;
     }
-    .logo-designs-sub-heading::after, .business-card-sub-heading::after {
-        bottom: -5px;
+    .ui-ux-description {
+        font-size: clamp(0.8em, 1.5vw, 1em);
+        margin-bottom: 20px;
     }
-    .logo-designs-grid {
-        grid-template-columns: repeat(2, 1fr); /* Still 2 columns on mobile (tablets) */
-        gap: 15px;
-        margin-top: 30px;
-        margin-bottom: 30px;
-        max-width: 95%; /* Allow it to be wider on mobile */
+    .ui-ux-media-container {
+        margin-bottom: 20px;
     }
-    .logo-design-card {
-        padding: 8px; /* Further reduce padding */
+}
+/* --- CONTACT SECTION --- */
+.contact-section {
+    background-color: #000; /* Pure black background */
+    color: #fff;
+    padding-top: 20px; /* Minimal space above content */
+    padding-bottom: 0; /* No extra padding here as divider has margin */
+    text-align: center; /* Center overall content */
+    overflow: hidden;
+    position: relative;
+    /* You can add a subtle background pattern here if you like, e.g.: */
+    /* background-image: radial-gradient(circle, #1a1a1a 1px, transparent 1px); */
+    /* background-size: 20px 20px; */
+}
+
+.contact-content-wrapper {
+    max-width: 800px; /* Limit content width for a "small" section */
+    margin: 0 auto; /* Center the wrapper */
+    padding: 0 20px; /* Horizontal padding */
+    position: relative;
+    z-index: 2;
+}
+
+/* Common Section Title (LET'S CONNECT) - uses .section-title */
+/* .section-title { ... } */
+
+.contact-intro-text {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.1em;
+    color: #E0E0E0;
+    margin-top: 25px;
+    margin-bottom: 40px; /* Space above contact details */
+    line-height: 1.6;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-details-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns on desktop */
+    gap: 30px; /* Space between items */
+    margin-bottom: 50px; /* Space above button */
+    justify-items: center; /* Center items within their grid cells */
+    align-items: center; /* Center items vertically */
+}
+
+.contact-item {
+    display: flex;
+    flex-direction: column; /* Stack icon and text vertically */
+    align-items: center; /* Center icon and text */
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s ease, transform 0.3s ease;
+    padding: 10px; /* Make clickable area slightly larger */
+}
+
+.contact-item:hover {
+    color: #e75480; /* Accent color on hover */
+    transform: translateY(-5px); /* Lift slightly on hover */
+}
+
+.contact-icon {
+    font-size: 2.5em; /* Large icon size */
+    margin-bottom: 10px; /* Space between icon and text */
+}
+
+.contact-text {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.95em;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.contact-button {
+    background-color: #e75480; /* Accent color */
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.1em;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-bottom: 50px; /* Space below button */
+}
+
+.contact-button:hover {
+    background-color: #8A2BE2; /* Change to purple accent on hover */
+    transform: translateY(-3px);
+}
+
+
+/* --- RESPONSIVE ADJUSTMENTS for CONTACT SECTION --- */
+
+@media (max-width: 1024px) {
+    .contact-content-wrapper {
+        max-width: 700px;
+        padding: 0 15px;
     }
-    .business-card-designs-grid {
-       display: flex; /* Change to flex for carousel */
-        flex-wrap: nowrap; /* Prevent wrapping */
-        overflow: hidden; /* Hide content outside */
-        position: relative; /* For arrow positioning */
-        padding: 0 40px; /* Space for arrows */
-        gap: 0; /* No gap on the grid itself, gap handled by cards */
-        margin-top: 30px;
-        margin-bottom: 30px;
-        max-width: 95%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .business-card-designs-grid .business-card-carousel {
-        gap: 10px; /* Smaller gap for very small phones */
-    }
-    .business-card-designs-grid .business-card-carousel .logo-design-card {
-        flex: 0 0 calc(100% - 10px); /* One card per view on very small phones */
-        padding: 10px;
-    }
-    .business-card-designs-grid .carousel-nav-arrow {
-        width: 30px;
-        height: 30px;
+    .contact-intro-text {
         font-size: 1em;
+        margin-bottom: 30px;
+    }
+    .contact-details-grid {
+        gap: 20px;
+        margin-bottom: 40px;
+    }
+    .contact-icon {
+        font-size: 2em;
+    }
+    .contact-button {
+        font-size: 1em;
+        padding: 12px 25px;
+        margin-bottom: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-content-wrapper {
+        max-width: 95%;
+        padding: 0 10px;
+    }
+    .contact-intro-text {
+        font-size: 0.95em;
+        margin-bottom: 25px;
+    }
+    .contact-details-grid {
+        grid-template-columns: repeat(2, 1fr); /* KEY: 2 columns on tablets/half-screen */
+        gap: 20px;
+        margin-bottom: 30px;
+    }
+    .contact-item {
+        padding: 8px;
+    }
+    .contact-icon {
+        font-size: 1.8em;
+        margin-bottom: 8px;
+    }
+    .contact-text {
+        font-size: 0.9em;
+    }
+    .contact-button {
+        font-size: 0.95em;
+        padding: 10px 20px;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-content-wrapper {
+        padding: 0 5px;
+    }
+    .contact-intro-text {
+        font-size: 0.9em;
+        margin-bottom: 20px;
+    }
+    .contact-details-grid {
+        grid-template-columns: 1fr; /* KEY: 1 column on very small phones */
+        gap: 15px;
+        margin-bottom: 25px;
+    }
+    .contact-item {
+        padding: 5px;
+    }
+    .contact-icon {
+        font-size: 1.5em;
+        margin-bottom: 5px;
+    }
+    .contact-text {
+        font-size: 0.85em;
+    }
+    .contact-button {
+        font-size: 0.9em;
+        padding: 8px 15px;
+        margin-bottom: 25px;
     }
 }
