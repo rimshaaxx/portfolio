@@ -1134,7 +1134,7 @@ body {
 
 @media (max-width: 480px) {
     .ui-ux-content-wrapper {
-        padding: 0 25px;
+        padding: 0 10px;
     }
     .ui-ux-main-heading {
         font-size: clamp(1.1em, 2.8vw, 1.8em);
